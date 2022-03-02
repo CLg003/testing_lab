@@ -28,4 +28,8 @@ class Pub:
     def find_drunk_customer_level(customer):
         return customer.drunk
 
+    def is_too_drunk(self, customer):
+        if customer.drunk >= self.breaking_drunk_point:
+            return True
+        return False
 

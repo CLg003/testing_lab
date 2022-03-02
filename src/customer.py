@@ -15,3 +15,4 @@ class Customer:
             drink_price = pub.find_drink_price(drink_name)
             self.reduce_wallet(drink_price)
             pub.increase_till(drink_price)
+        
