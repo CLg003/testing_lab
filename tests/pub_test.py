@@ -16,8 +16,8 @@ class TestPub(unittest.TestCase):
         drinks = [self.drink1, self.drink2]
 
         self.pub = Pub("The Practising Pony", 100.00, drinks) #this is set new before every single test is run
-        self.customer1 = Customer("George", 4.00, 17)
-        self.customer2 = Customer("Mary", 65.00, 42)
+        self.customer1 = Customer("George", 4.00, 17, 5)
+        self.customer2 = Customer("Mary", 65.00, 42, 3)
 
     def test_pub_has_name(self):
         self.assertEqual("The Practising Pony", self.pub.name)
