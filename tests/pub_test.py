@@ -67,6 +67,5 @@ class TestPub(unittest.TestCase):
         too_drunk = self.pub.is_too_drunk(self.customer2)
         self.assertEqual(False, too_drunk)
     
-    def test_pub_refuses(self):
-        pass
+    
         
