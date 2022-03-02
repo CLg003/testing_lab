@@ -25,7 +25,11 @@ class Pub:
         alcohol_level = self.find_alcohol_level(drink)
         customer.drunk += alcohol_level
 
-    def find_drunk_customer_level(customer):
+    def find_drunk_customer_level(self, customer):
         return customer.drunk
 
+    def check_drunk_level(self, customer):
+        if customer.drunk < 10:
+            return True
+        return False
 

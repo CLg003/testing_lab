@@ -6,18 +6,13 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
     
     def setUp(self):
-        # self.drinks = [
-        #     {"name": "red wine", "price": 3.50},
-        #     {"name": "espresso martini", "price": 5.00},
-        #     {"name": "gin and tonic", "price": 2.95}
-        # ]
         self.drink1 = Drink("red wine", 2, 3)
         self.drink2 = Drink("espresso martini", 5, 4)
         drinks = [self.drink1, self.drink2]
 
         self.pub = Pub("The Practising Pony", 100.00, drinks) #this is set new before every single test is run
         self.customer1 = Customer("George", 4.00, 17, 5)
-        self.customer2 = Customer("Mary", 65.00, 42, 3)
+        self.customer2 = Customer("Mary", 65.00, 42, 10)
 
     def test_pub_has_name(self):
         self.assertEqual("The Practising Pony", self.pub.name)
@@ -58,7 +53,12 @@ class TestPub(unittest.TestCase):
     def test_find_drunk_customer_level(self):
         customer_drunk_level = self.customer1.drunk
         self.assertEqual(5, customer_drunk_level)
-    
-    def test_pub_refuses(self):
-        pass
+
+    def test_check_drunk_level_can_serve(self):
+        result = self.pub.check_drunk_level(self.customer1)
+        self.assertEqual(True, result)
+
+    def test_check_drunk_level_do_not_serve(self):
+        result = self.pub.check_drunk_level(self.customer2)
+        self.assertEqual(False, result)
         
