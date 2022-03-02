@@ -49,3 +49,9 @@ class TestPub(unittest.TestCase):
     def test_find_alcohol_level(self):
         drink_level = self.pub.find_alcohol_level(self.drink1)
         self.assertEqual(3, drink_level)
+
+    def test_increase_drunk_level(self):
+        alcohol_level_number = self.pub.find_alcohol_level(self.drink1)
+        self.customer1.drunk += alcohol_level_number
+        self.assertEqual(8, self.customer1.drunk)
+        

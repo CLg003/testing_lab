@@ -18,4 +18,8 @@ class Pub:
         return False
 
     def find_alcohol_level(self, drink):
-        return drink.alcohol_level 
+        return drink.alcohol_level
+
+    def increase_drunk_level(self, customer, drink):
+        alcohol_level = self.find_alcohol_level(drink)
+        customer.drunk += alcohol_level

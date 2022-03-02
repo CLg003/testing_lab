@@ -40,7 +40,4 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(6, self.customer.drunk)
 
     
-    # def test_increase_drunk_level(self):
-        
-    #     level = self.increase_drunk_level()
         
