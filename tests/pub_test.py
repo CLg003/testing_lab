@@ -11,8 +11,8 @@ class TestPub(unittest.TestCase):
         #     {"name": "espresso martini", "price": 5.00},
         #     {"name": "gin and tonic", "price": 2.95}
         # ]
-        self.drink1 = Drink("red wine", 2)
-        self.drink2 = Drink("espresso martini", 5)
+        self.drink1 = Drink("red wine", 2, 3)
+        self.drink2 = Drink("espresso martini", 5, 4)
         drinks = [self.drink1, self.drink2]
 
         self.pub = Pub("The Practising Pony", 100.00, drinks) #this is set new before every single test is run
