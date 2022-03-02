@@ -11,3 +11,8 @@ class Pub:
         for drink in self.drinks:
             if drink_name == drink.name:
                 return drink.price
+    
+    def check_age(self, customer):
+        if customer.age >= 18:
+            return True
+        return False

@@ -1,6 +1,7 @@
 import unittest
 from src.pub import Pub
 from src.drink import Drink
+from src.customer import Customer
 
 class TestPub(unittest.TestCase):
     
@@ -15,6 +16,8 @@ class TestPub(unittest.TestCase):
         drinks = [self.drink1, self.drink2]
 
         self.pub = Pub("The Practising Pony", 100.00, drinks) #this is set new before every single test is run
+        self.customer1 = Customer("George", 4.00, 17)
+        self.customer2 = Customer("Mary", 65.00, 42)
 
     def test_pub_has_name(self):
         self.assertEqual("The Practising Pony", self.pub.name)
@@ -34,3 +37,11 @@ class TestPub(unittest.TestCase):
         expected = 102.50
         actual = self.pub.till
         self.assertEqual(expected, actual) # order matter
+
+    def test_check_age_fail(self):
+        result = self.pub.check_age(self.customer1)
+        self.assertEqual(False, result)
+
+    def test_check_age_pass(self):
+        result = self.pub.check_age(self.customer2)
+        self.assertEqual(True, result)

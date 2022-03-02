@@ -10,6 +10,7 @@ class TestCustomer(unittest.TestCase):
         drinks = [self.drink1, self.drink2]
 
         self.customer = Customer("Szymon", 200.00, 21)
+        self.customer_young = Customer("Claire", 10, 15)
         self.pub = Pub("Anything", 300, drinks)
 
     def test_customer_has_name(self):
@@ -22,10 +23,15 @@ class TestCustomer(unittest.TestCase):
         self.customer.reduce_wallet(3.50)
         self.assertEqual(196.50, self.customer.wallet)
 
-    def test_customer_buy_drink(self):
+    def test_customer_buy_drink_old(self):
         self.customer.buy_drink("espresso martini", self.pub)
         self.assertEqual(195, self.customer.wallet)
         self.assertEqual(305, self.pub.till)
+
+    def test_customer_buy_drink_young(self):
+        self.customer_young.buy_drink("espresso martini", self.pub)
+        self.assertEqual(10, self.customer_young.wallet)
+        self.assertEqual(300, self.pub.till)
 
     def test_customer_has_age(self):
         self.assertEqual(21, self.customer.age)
