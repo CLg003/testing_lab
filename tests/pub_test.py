@@ -45,3 +45,7 @@ class TestPub(unittest.TestCase):
     def test_check_age_pass(self):
         result = self.pub.check_age(self.customer2)
         self.assertEqual(True, result)
+
+    def test_find_alcohol_level(self):
+        drink_level = self.pub.find_alcohol_level(self.drink1)
+        self.assertEqual(3, drink_level)

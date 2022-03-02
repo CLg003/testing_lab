@@ -16,3 +16,6 @@ class Pub:
         if customer.age >= 18:
             return True
         return False
+
+    def find_alcohol_level(self, drink):
+        return drink.alcohol_level 
