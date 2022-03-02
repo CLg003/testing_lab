@@ -55,3 +55,10 @@ class TestPub(unittest.TestCase):
         self.customer1.drunk += alcohol_level_number
         self.assertEqual(8, self.customer1.drunk)
         
+    def test_find_drunk_customer_level(self):
+        customer_drunk_level = self.customer1.drunk
+        self.assertEqual(5, customer_drunk_level)
+    
+    def test_pub_refuses(self):
+        pass
+        

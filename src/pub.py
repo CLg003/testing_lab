@@ -3,6 +3,7 @@ class Pub:
         self.name = name
         self.till = till
         self.drinks = drinks
+        self.breaking_drunk_point = 3
 
     def increase_till(self, amount):
         self.till += amount
@@ -23,3 +24,8 @@ class Pub:
     def increase_drunk_level(self, customer, drink):
         alcohol_level = self.find_alcohol_level(drink)
         customer.drunk += alcohol_level
+
+    def find_drunk_customer_level(customer):
+        return customer.drunk
+
+
