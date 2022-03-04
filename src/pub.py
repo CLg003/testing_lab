@@ -3,7 +3,7 @@ class Pub:
         self.name = name
         self.till = till
         self.drinks = drinks
-        self.breaking_drunk_point = 3
+        self.stock = {}
 
     def increase_till(self, amount):
         self.till += amount
@@ -32,4 +32,18 @@ class Pub:
         if customer.drunk < 10:
             return True
         return False
+    
+    def sell_drink(self, drink_name, customer):
+        if self.check_age(customer):
+            if self.check_drunk_level(customer):
+                drink_price = self.find_drink_price(drink_name)
+                customer.reduce_wallet(drink_price)
+                self.increase_till(drink_price)
+
+    def add_drinks_to_stock(self, drinks_list):
+        for drink in drinks_list:
+            if drink in self.stock:
+                self.stock[drink] += 1
+            else:
+                self.stock[drink] = 1
 
